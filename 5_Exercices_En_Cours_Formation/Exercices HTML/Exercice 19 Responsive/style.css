@@ -1,0 +1,55 @@
+
+body {
+     background-color: aquamarine;
+}
+header {
+    display: flex;
+    justify-content: center;
+}
+
+#banner {
+    width: 100%;
+}
+
+section {
+    display: flex;
+    align-items: center;
+    justify-items: center;
+    
+}
+
+article {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border: solid 2px black;
+    border-radius: 10px;
+    margin: 2em;
+    padding: 2em;
+    background-color: aliceblue;
+}
+
+footer{
+    display: flex;
+    justify-content: space-evenly;
+}
+
+nav{
+    width: 100%;
+    display: flex;
+    justify-content: space-evenly;
+}
+
+a{
+    color: grey;
+}
+
+@media (max-width: 1300px) { 
+    section {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-items: center;
+      
+    }
+ }

@@ -1,0 +1,20 @@
+caption {
+    color:rgb(153, 0, 255);
+    font-weight: bold;
+}
+
+table {
+    border : thick double rgb(153, 0, 255);
+    border-collapse: collapse;
+
+}
+
+th {
+    background: lightskyblue;
+    border: solid black 2px;
+}
+
+ tr td {
+    border: solid black 2px;
+}
+

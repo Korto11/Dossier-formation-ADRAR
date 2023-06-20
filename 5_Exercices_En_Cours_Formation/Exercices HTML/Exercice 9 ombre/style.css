@@ -1,0 +1,30 @@
+h1{
+    text-shadow: 10px -8px 3px rgb(156, 83, 185);
+}
+
+h1 + p {
+    box-shadow : 0px 0px 25px 3px red ;
+}
+
+p:last-of-type {
+    box-shadow:-5px 5px 2px chartreuse ;
+}
+
+.pouet {
+    height: 400px;
+    width: 500px;
+    background-color: blueviolet;
+    
+}
+.pif {
+    height: 200px;
+    width: 300px;
+    position:relative;
+    left: 100px;
+    top: 100px;
+    background-color: lightskyblue;
+    box-shadow: -4px -3px 10px 1px white,4px 3px 10px 1px black;
+ 
+}
+
+

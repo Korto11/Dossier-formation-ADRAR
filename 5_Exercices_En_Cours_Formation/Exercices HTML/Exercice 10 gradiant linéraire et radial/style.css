@@ -1,0 +1,32 @@
+.vert,.violet, p, .pink, .doppler {
+    display: flex;
+    width: 200px;
+    height: 200px;
+    border: solid 2px;
+    border-color: black;
+    margin-bottom: 20px;
+}
+
+.vert {
+    background-image: linear-gradient(to bottom left,red,green,blue);
+}
+
+.violet {
+    background-image: linear-gradient(110deg,rgb(155, 55, 155) 70% ,yellow);
+}
+
+p.force {
+    background-image: linear-gradient(to bottom, white,rgba(0, 0, 0,.5));
+}
+
+.pink {
+    background-image: radial-gradient(circle,lightblue,pink);
+}
+
+.doppler {
+    background-image: repeating-radial-gradient(black,white 10px);
+}
+
+.doppler:hover {
+    background-image: repeating-radial-gradient(white,black 10px);
+}

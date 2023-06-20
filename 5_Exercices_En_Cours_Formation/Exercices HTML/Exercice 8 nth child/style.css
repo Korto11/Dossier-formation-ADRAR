@@ -1,0 +1,34 @@
+/*
+li:nth-child(even){
+    color: blue;
+}
+
+ul:hover {
+    & li:nth-child(odd){
+        color: blue;
+    }
+  }
+ 
+ul:hover {
+    & li:nth-child(even){
+        color: black;
+    }
+  }
+*/
+
+
+li {
+    font-size: 4vh;
+}
+
+li:nth-child(2n+2){
+    color: blue;
+}
+
+ul:hover li:nth-child(even){
+    color:black;
+}
+
+ul:hover li:nth-child(odd){
+    color:blue;
+}

@@ -1,0 +1,10 @@
+
+
+h1 {
+    @include bigTitle(green);
+    text-decoration: underline $secondaryColor;
+}
+
+p {
+    color : $textColor;
+}

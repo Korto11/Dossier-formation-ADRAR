@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Contact</title>
+</head>
+<body>
+    <header>
+        <img src="bannière.jpg" alt="bannière">
+        <h1> Les randonnées d'Occitanie </h1>
+        <ul>
+            <li><a href="index.html">Accueil</a></li>
+            <li><a href="blog.html">Blog</a></li>
+            <li><a href="galerie.html">Galerie</a></li>
+            <li><a href="contact.html">Contact</a></li>
+        </ul>
+    </header>
+    <section>
+        <form action="data.php" method="post">
+            <fieldset>
+                <legend>Contact</legend>
+                <span>*</span>
+                <label for="nom">Nom :</label>
+                <input type="text" required name="nom" placeholder="Nom" minlength="2" maxlength="20"><br>
+                <span>*</span>
+                <label for="email">E-mail :</label>
+                <input type="email" placeholder="nom@mail.com" required><br>
+                <label for="commentaire">Votre commentaire :</label><br>
+                <textarea name="commentaire" id="commentaire" cols="70" rows="10" placeholder=""></textarea><br>
+                <label for="checkbox">Envoi d'une copie</label>
+                <input type="checkbox" name="checkbox" id="checkbox" checked><br>
+                <input type="submit" name="submit" value="Envoyer">
+                <input type="reset" value="Réinitialiser">
+            </fieldset>
+        </form>
+    </section>
+    <footer>
+        <ul>
+            <li><a href="https://www.decathlon.fr/">Les bonnes chaussures</a></li>
+            <li><a href="https://www.decathlon.fr/">Les bons vêtements</a></li>
+            <li><a href="https://www.decathlon.fr/">Le bon matériel</a></li>
+        </ul>
+    </footer>
+</body>
+</html>

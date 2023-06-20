@@ -1,0 +1,41 @@
+h1 {
+    color: red;
+    text-align: center;
+    font-size: 7vh;
+
+}
+
+h3 {
+    color: blue;
+    font-size: 3vh;
+}
+
+h1+article+article  {
+    background-color: grey;
+}
+
+h1+article{
+    background-color: grey;
+}
+
+strong{
+    font-weight: lighter;
+    color: yellowgreen;
+}
+
+em {
+    font-style: normal;
+    text-decoration: underline;
+    font-size: 2vh;
+    color:orange;
+}
+
+article+article+article {
+    background-color: pink;
+}
+
+h1+article+article h3  {
+    color: green;
+    text-align: right;
+    text-decoration: underline;
+}

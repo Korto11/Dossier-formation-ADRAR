@@ -1,0 +1,25 @@
+p {
+    background-color: lightgrey;
+    border: solid green 2px;
+}
+
+#p1 {
+    height: 100px;
+    margin: 0px;
+}
+
+#p2 {
+    width: 50%;
+    margin: 20px 5px;
+}
+
+#p3 {
+    height: 200px;
+    width: 200px;
+    overflow: scroll;
+    margin: auto;
+}
+
+body {
+    background-color: rgb(149, 106, 219);
+}

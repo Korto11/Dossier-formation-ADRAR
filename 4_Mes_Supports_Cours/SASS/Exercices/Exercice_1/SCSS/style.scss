@@ -1,0 +1,42 @@
+/*reset CSS*/
+* {
+    margin: 0;
+    padding: 0;
+    text-decoration: none;
+    list-style: none;
+  }
+
+@import './Utils/Variables/variables';
+@import './Utils/Mixins/mixins';
+@import './Utils/Extends/extends';
+@import './Base/base';
+
+
+
+header {
+    background-color: $primaryColor;
+     .primaryNav {
+        font-size: $textSize;
+        &__a {
+            text-decoration: underline red;
+            &--active {
+                text-decoration: underline yellow;
+            }
+        }
+    }
+}
+
+.card {
+    text-decoration: $textColor;
+    &__title{
+        @include bigTitle;
+    }
+}
+
+.socialNetwork {
+    @extend %flexCard;
+}
+
+.cardList {
+    @extend %flexCard;
+}

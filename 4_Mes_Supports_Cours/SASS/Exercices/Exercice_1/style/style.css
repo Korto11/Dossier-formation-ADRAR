@@ -1,0 +1,50 @@
+/*reset CSS*/
+* {
+  margin: 0;
+  padding: 0;
+  text-decoration: none;
+  list-style: none;
+}
+
+/*COLORS*/
+/*FONT-FAMILY*/
+/*FONT-SIZE*/
+.cardList, .socialNetwork {
+  display: flex;
+  justify-content: center;
+}
+
+h1 {
+  font-size: 3rem;
+  font-family: cambria, georgia, sans-serif;
+  color: green;
+  text-decoration: underline rgb(46, 46, 148);
+}
+
+p {
+  color: Black;
+}
+
+header {
+  background-color: orange;
+}
+header .primaryNav {
+  font-size: 3rem;
+}
+header .primaryNav__a {
+  text-decoration: underline red;
+}
+header .primaryNav__a--active {
+  text-decoration: underline yellow;
+}
+
+.card {
+  text-decoration: Black;
+}
+.card__title {
+  font-size: 3rem;
+  font-family: cambria, georgia, sans-serif;
+  color: orange;
+}
+
+/*# sourceMappingURL=style.css.map */
