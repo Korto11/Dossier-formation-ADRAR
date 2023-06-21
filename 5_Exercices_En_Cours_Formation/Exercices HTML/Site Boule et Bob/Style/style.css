@@ -1,0 +1,58 @@
+* {
+    margin : 0px;
+}
+@font-face {
+    font-family: 'Montserrat';
+    src: url('../fonts/Montserrat-Regular.ttf') format(truetype)
+}
+body {
+    background-color:aliceblue ;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+main {
+    background-color : #003A6A;
+    display: flex;
+    flex-direction: column;
+    width : 75%;
+    height : 100%;
+    align-items: center;
+    padding-bottom: 20px;
+}
+h1,h2,p {
+    color: #F9CF00;
+    font-family: 'Montserrat',sans-serif;
+    padding: 10px;
+}
+article{
+    display: flex;
+    flex-direction: column;
+    margin: auto;
+}
+span{
+    background-color: #F9CF00;
+    width: 50%;
+    height: 3px;
+    margin: 40px;
+}
+h1 {
+    font-size: 3em;
+}
+h2 {
+    width :80%;
+    font-size: 2em;
+    margin: auto;
+}
+container {
+    display: flex;
+    margin: auto;
+    width: 80%;
+    align-items: flex-start;
+}
+.imgpétanque {
+   width : 40%;
+   height: auto;
+   padding: 10px;
+   padding-left: 0px;
+}
