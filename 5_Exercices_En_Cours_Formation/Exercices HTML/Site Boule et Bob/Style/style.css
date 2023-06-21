@@ -29,6 +29,7 @@ article{
     display: flex;
     flex-direction: column;
     margin: auto;
+    width: 80%;
 }
 span{
     background-color: #F9CF00;
@@ -42,12 +43,10 @@ h1 {
 h2 {
     width :80%;
     font-size: 2em;
-    margin: auto;
 }
 container {
     display: flex;
     margin: auto;
-    width: 80%;
     align-items: flex-start;
 }
 .imgpétanque {
