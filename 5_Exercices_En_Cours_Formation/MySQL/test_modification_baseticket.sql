@@ -46,9 +46,9 @@ SELECT id_receipt, date_receipt, id_seller FROM receipt WHERE date_receipt = '20
 -- Afficher la liste des vendeur avec (prenom et le nom).
 SELECT first_name_seller, name_seller FROM seller;
 
-select id_product, name_product, description_product, price_product, product.id_category, name_category from 
+-- select id_product, name_product, description_product, price_product, product.id_category, name_category from 
 
--- requête qui affiche la liste des produits avec leur catégorie
+-- requête qui affiche la liste des produits avec leur catégorie --
 SELECT id_product, name_product, description_product, price_product, 
 product.id_category, name_category FROM product 
 INNER JOIN category ON product.id_category = category.id_category;
