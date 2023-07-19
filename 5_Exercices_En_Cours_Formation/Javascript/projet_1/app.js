@@ -1,12 +1,12 @@
+let tamere = document.body.getElementsByTagName('p');
+let pSuper = document.body.getElementsByClassName('super');
+let pSpecial = document.getElementById('special');
+console.log(tamere);
+console.log(pSuper);
+console.log(pSpecial);
 
-// function pizza () {
-//     let pizzaQuantité;
-//     let pizzaTaille;
-//     let pizzaType;
-//     return {"Qté":pizzaQuantité,"taille":pizzaTaille,"type":pizzaType};
-// }
-// let pizzaOrder= [];
-// pizzaOrder.push(pizza);
+
+
 
 // let pizza = {
 // quantité : 2,
@@ -146,24 +146,65 @@
 // console.log(tabUser[2]);
 // console.log(tabUser[2][1]);
 
-let objectUser = {
-    name : "Jacky" ,
-    age : 24,
-}
-objectUser.passion = ["nature","peinture"] ;
-console.log(objectUser.name);
-console.log(objectUser.passion);
-console.log(objectUser.passion[1]);
+// let objectUser = {
+//     name : "Jacky" ,
+//     age : 24,
+// }
+// objectUser.passion = ["nature","peinture"] ;
+// console.log(objectUser.name);
+// console.log(objectUser.passion);
+// console.log(objectUser.passion[1]);
 
-// Bonus 
+// // Bonus 
 
-objectUser.name = "Grontrand";
-objectUser.age = 42;
-objectUser.passion = ["bagarre","petanque"]
-console.log(objectUser.name);
-console.log(objectUser.age)
-console.log(objectUser.passion);
-console.log(objectUser.passion[1]);
+// objectUser.name = "Grontrand";
+// objectUser.age = 42;
+// objectUser.passion = ["bagarre","petanque"]
+// console.log(objectUser.name);
+// console.log(objectUser.age);
+// console.log(objectUser.passion);
+// console.log(objectUser.passion[1]);
+
+// let listeFilm = ['Ultime Décision','Mission Alcatraz','Attack Force'];
+// listeFilm.forEach(i => console.log(i)); 
+// for (const k of listeFilm) {
+//     console.log(k);
+// }
+// const userData = {
+//     name: 'John Doe',
+//     email: 'john.doe@example.com',
+//     age: 25,
+//     dob: '08/02/1989',
+//     active: true
+// };
+
+// for (let i in userData ) {
+//     console.log(`${i}: ${userData[i]}`);
+// }
+
+// let lesTxt = document.body.getElementsByTagName('p');
+// console.log(lesTxt);
+// console.log(lesTxt[0]);
+
+// let textesTab = Array.from(lesTxt);
+// console.log(textesTab);
+
+// const k = textesTab.map(x => x.innerText = 'Pomme de terre');
+// console.log(k);
+
+// //! Exception constante modif ? 
+// const MyTracklist = {
+//     track1:'lofteurs up and down',
+//     track2:'David Hallyday',
+//     track3:'Crazy Frog'
+// }
+// // console.log(MyTracklist);
+
+// MyTracklist.track1 = 'félicien'
+// console.log(MyTracklist);
+
+
+
 
 
 /**
@@ -257,3 +298,51 @@ console.log(objectUser.passion[1]);
 // console.log(3==3&&3<4);
 // let typeUtilisateur = 'Extra';
 // console.log(typeUtilisateur == 'Extra' || typeUtilisateur == 'Premium');
+
+// //! Syntaxe ES6 Fonction fléchée (c'est beaucoup utilisé nottament dans des framework - librairies)
+// let somme = function(a, b) {
+//     return a + b;
+// };
+// //! Avant la => on a les paramètres, Après la => on a ce que ca return
+// let leCalcul = (a, b) => a + b;
+// console.log(leCalcul(1, 2));
+
+//? L'instruction for...of permet de créer une boucle Array qui parcourt un objet itérable 
+//? (ce qui inclut les objets Array, Map, Set, String, TypedArray, l'objet arguments, etc.) 
+//? et qui permet d'exécuter une ou plusieurs instructions pour la valeur de chaque propriété.
+// on définit une variable temporaire pour parcourir le tableau
+// for(let unElementTablo of listeFilm){
+//     console.log('boucle FOR...OF : ',unElementTablo);
+// };
+
+//? Parcourir les Objet  (Depuis javaScript ES8)
+//? La Method .keys() qui convertit les clés d'un objet en tableau
+//? La Method .values() qui convertit les valeurs d'un objet en tableau
+// //? La Method .entries() qui renvoit un tableau dans un tableau pour combiner clé - valeur
+// const keyUser = Object.keys(userData);
+// console.log("les clé de l'objet converties en array : ",keyUser);
+
+// const valuesUser = Object.values(userData);
+// console.log("les valeur de l'objet converties en array : ",valuesUser);
+
+// const convertedDataUser = Object.entries(userData);
+// console.log("les entrées de l'objet converties en array : ",convertedDataUser);
+
+//? bonus syntaxe en ƒ° classic
+//! Dans la fonction que l'on passe dans map(), si on met un 2nd param
+//! C'est l'index du tableau
+// textesTab.map(function(x,i){
+    // x.style.color = "red";
+    // console.log(i)
+
+//? bonus syntaxe en ƒ° fléchée
+// textesTab.map((x,i) => {
+//     x.style.color = "red";
+//     console.log(i)
+// });
+
+//? Bonus II le retour : utilisation de map pour placer un addEventListener sur chaque <p>
+// textesTab.map(toto => toto.addEventListener('click',function(){
+//     console.log("SUPER CA CLICK")
+// }));
+
