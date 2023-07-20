@@ -1,9 +1,9 @@
-let tamere = document.body.getElementsByTagName('p');
-let pSuper = document.body.getElementsByClassName('super');
-let pSpecial = document.getElementById('special');
-console.log(tamere);
-console.log(pSuper);
-console.log(pSpecial);
+// let tamere = document.body.getElementsByTagName('p');
+// let pSuper = document.body.getElementsByClassName('super');
+// let pSpecial = document.getElementById('special');
+// console.log(tamere);
+// console.log(pSuper);
+// console.log(pSpecial);
 
 
 
@@ -203,8 +203,151 @@ console.log(pSpecial);
 // MyTracklist.track1 = 'félicien'
 // console.log(MyTracklist);
 
+//! Selectionner des éléments 
+
+// document.body.innerHTML = ''
+// //? Une fonction type getElement pour récupérer UN élément par son ID 
+// let specialP = document.getElementById('special');
+// console.log(specialP);
+
+// //? Une fonction type getElement pour récupérer tous les élément selon une certaine balise dans une HTMLCollection
+// let tousLesP = document.getElementsByTagName('p');
+// console.log('La HTMLCollection',tousLesP);
+// //? Quand on a une HTMLCollection on peut accèder à un certain élément 
+// console.log('le 3e <p> dans la HTMLCollection : ',tousLesP[2]);
+
+// //? Une fonction type getElement pour récupérer tous les élément selon une certaine class dans une HTMLCollection
+// let tousLesSuper = document.getElementsByClassName('super');
+// console.log(tousLesSuper);
+// console.log(tousLesSuper[1]);
+
+// let tousLesSuperMaisLePremmierEnFait = document.getElementsByClassName('super')[0];
+// console.log('tousLesSuperMaisLePremmierEnFait',tousLesSuperMaisLePremmierEnFait);
+
+// //? Une fonction type querySelector pour récupérer UN élément (le 1er trouvé)
+// let lePremierP = document.querySelector('p');
+// console.log('lePremierP via querySelector : ',lePremierP);
+
+// //? Une fonction type querySelector pour récupérer UN élément par son ID
+// let pSpecial = document.querySelector('#special');
+// console.log('pSpecial querySelector + ID',pSpecial);
+
+// //? Une fonction type querySelector pour récupérer UN (le 1er trouvé) élément par sa classe
+// let pSuper = document.querySelector('.super');
+// console.log('pSuper querySelector + class',pSpecial);
+
+// //? Une fonction type querySelector pour récupérer UN (le 1er trouvé) élément par la NodeList
+// let allParagraphes = document.querySelectorAll('p');
+// console.log('allParagraphes querySelector + balise',allParagraphes);
+// console.log('allParagraphes mais on prend le 2e',allParagraphes[1]);
+
+// //! Placer des elements dans une page web
+// //? Une fonction type querySelector pour récupérer UN (le 1er trouvé) élément par la NodeList
+// let allParagraphes = document.querySelectorAll('p');
+// let laDiv = document.querySelector('.vide');
+// let premierH1 = document.querySelector('h1');
+// //! insertBefore, on selectionne 2 éléments pour placer l'un avant l'autre
+// document.body.insertBefore(allParagraphes[9],premierH1);
+// !laDiv.append(`Là c'est JS qui ajoute du texte dans la div`);
+// ! Append plutot pensé pour ajouter du contenu à la volé au format string
+// si on a crée ou séléctionné un élément que l'on veut placer : ceci peut marcher
+// laDiv.append(allParagraphes[4]);
+// Mais on a aussi la fonction appendChild;
+// laDiv.appendChild(allParagraphes[0]);
+// //! On peut aussi supprimer un élément du DOM
+// document.body.removeChild(allParagraphes[9]);
+
+// //! Créer des elements de texte
+// const newTxt = document.createTextNode('DU texte Youhouuuuu');
+// document.body.append(newTxt); //Créer c'est bien mais il faut placer
+
+// //! Créer n'importe quel element HTML
+// const newH1 = document.createElement('h1');//phase 1 creation
+// newH1.innerText="AZERTYUIOP";//phase 2 remplissage
+// newH1.style.backgroundColor ='red';
+// document.body.append(newH1);//phase 3 on place dans la pag
+
+// const userData = {
+//     name: 'John Doe',
+//     email: 'john.doe@example.com',
+//     age: 25,
+//     dob: '08/02/1989',
+//     active: true
+// };
+// const newDiv = document.createElement('div');
+// newDiv.setAttribute('class','data');
+// newDiv.innerHTML = "<h1>La Data de Johny</h1>";
+// document.body.append(newDiv);
+// console.log(newDiv);
 
 
+// for (let i in userData ) {
+//         let dataEntries =  document.createElement('p');
+//         dataEntries.innerText = (`${i}: ${userData[i]}`);
+//         newDiv.append(dataEntries);
+//     }
+   
+    
+//!Correction
+
+    // const userData = {
+    //     name: 'John delavega',
+    //     email: 'john.doe@example.com',
+    //     age: 25,
+    //     dob: '08/02/1989',
+    //     active: true,
+    //     img:'https://www.boredpanda.com/blog/wp-content/uploads/2022/06/funny-low-cost-cosplay-pics-62a744d39c80a__700.jpg'
+    //   };
+      
+      // JS qui va customiser la div du profile utilisateur
+    //   let divUser = document.querySelector('.userProfile');
+    //   divUser.style.backgroundColor = `background-color: #4158D0`;
+    //   divUser.style.backgroundImage = `linear-gradient(43deg, #4158D0 0%, #C850C0 46%, #FFCC70 100%)`;
+    //   divUser.style.color = `white`;
+    //   divUser.style.width = '500px';
+    //   divUser.style.margin = 'auto';
+    //   divUser.style.padding = '2rem';
+      
+      //JS crée une image, renseigne la src , modif taille
+    //   const imgTemplate = document.createElement('img');
+    //   imgTemplate.src = userData.img;
+    //   imgTemplate.style.height = '500px';
+    //   imgTemplate.style.width = '500px';
+    //   divUser.append(imgTemplate);
+      
+      // JS crée le titre du name
+    //   const nameTemplate = document.createElement('h1');//phase 1 creation
+    //   nameTemplate.innerText = userData['name'];
+    //   divUser.append(nameTemplate);
+      
+      // JS crée le titre du email
+    //   const emailTemplate = document.createElement('h2');//phase 1 creation
+    //   emailTemplate.innerText = userData.email;
+    //   divUser.append(emailTemplate);
+      
+      // JS crée le titre du age
+    //   const ageTemplate = document.createElement('h2');//phase 1 creation
+    //   ageTemplate.innerText = userData.age;
+    //   divUser.append(ageTemplate);
+      
+      // JS crée le titre du dob
+    //   const dobTemplate = document.createElement('h2');//phase 1 creation
+    //   dobTemplate.innerText = userData.dob;
+    //   divUser.append(dobTemplate);
+      
+      // JS crée le titre du active
+    //   const activeTemplate = document.createElement('h2');//phase 1 creation
+    //   activeTemplate.innerText = userData.active;
+    //   divUser.append(activeTemplate);
+
+// let ajouterTexte = (pseudo,duTexte) => { 
+//     let texte = document.createElement('p');
+//     texte.innerHTML = `<strong>${pseudo}</strong> de son magnifique patronyme ${duTexte}`
+//     document.body.append(texte);
+// }
+// ajouterTexte('José','Gracia');
+// ajouterTexte('Bastien','le Krakenito');
+// ajouterTexte('Florian','ITER');
 
 
 /**
@@ -346,3 +489,27 @@ console.log(pSpecial);
 //     console.log("SUPER CA CLICK")
 // }));
 
+/**
+ * **************************************
+ * 14- Les Classes
+ * **************************************
+ */
+class UserProfile {
+    //! Pas besoin de déclarer function devant le constructor et méthodes
+    constructor(nameUser, mailUser, phoneUser) {
+      this.nameUser = nameUser;
+      this.mailUser = mailUser;
+      this.phoneUser = phoneUser;
+    }
+    getProfileInfo() {
+      console.log('this ',this);
+      return `infos de l'utilisateur : 
+              son nom : ${this.nameUser}
+              son mail : ${this.mailUser}
+              son Tél : ${this.phoneUser}`;
+    }
+  }
+  
+  const exampleUser1 = new UserProfile("José", "jose@gmail.com", "09876543");
+  const exampleUser2 = new UserProfile("Sarah", "sarah@gmail.com", "063736252");
+  exampleUser2.getProfileInfo();
