@@ -350,6 +350,114 @@
 // ajouterTexte('Florian','ITER');
 
 
+// class Imc {
+//   constructor(nom,poids,taille) {
+//     this._nom = nom;
+//     this._poids = poids;
+//     this._taille = taille;
+//   }
+//   calculImc() {
+//     let imc = this._poids/this._taille**2;
+//     let imcr1 = imc.toFixed(2);
+//     let imcr2 = Number.parseFloat(imcr1);
+//     return imcr2
+//   }
+//   display() {
+//     console.log(`Bonjour ${this._nom} avec une taille de ${this._taille} et un poids de ${this._poids}, votre IMC est de ${this.calculImc()}.`)
+//   }
+// }
+
+// let list = [
+//   new Imc("Sébastien Chabal", 135, 1.7),
+//   new Imc("Escaladeuse", 45, 1.68),
+//   new Imc("JOJO ", 300, 2),
+//   new Imc("Gontrand ", 90, 1.75),
+//   new Imc("Colonel Clock ", 200, 1.75),
+//   new Imc("JOsiane de la Vega", 99, 1.55),
+// ];
+
+// list.forEach(i => i.display());
+
+
+
+
+// let firstLink = document.querySelector('a');
+// console.log(firstLink);
+// let allLinks = document.querySelectorAll('a');
+// console.log(allLinks);
+
+// let firstTitle = document.querySelector('h1');
+// console.log(firstTitle);
+
+// let firstImg = document.querySelector('img');
+// console.log(firstImg);
+
+// // firstTitle.style.backgroundColor = 'blue';
+// // firstTitle.style.color = 'beige';
+
+// firstTitle.className = 'laClasse';
+// firstLink.href = 'https://www.google.com'
+// firstImg.src = 'https://picsum.photos/200/300'
+
+// firstImg.addEventListener('click',()=>{
+//   console.log('CA CLICK A DONF');
+// });
+
+// let i = true;
+// let firstTitle = document.getElementById("mainTitle");
+// console.log(firstTitle);
+// firstTitle.addEventListener('click',() => {
+//   i == true? firstTitle.innerHTML ='Clique Gourgandine!' : firstTitle.innerHTML ='ouga booga!';
+//   i = !i ;
+// } )
+
+
+// EXO Click + classListe
+
+// ** addEventListener - classList.add() - classList.remove() - classList.toggle()
+// En CSS on crée une classe maCouleur (vous modifiez ce que vous voulez)
+// TODO 1: récupérer le titre dans une variable leTitre
+// TODO 2: récupérer tous les liens dans une variable lesLiens
+// TODO 3-1: Sur le 1er lien placer un addEventListener qui écoute le "click" et éxecute une fonction
+// TODO 3-2: Dans cette fonction on ajoute la classe "maCouleur" sur titre
+// TODO 4-1: Sur le 2e lien placer un addEventListener qui écoute le "click" et éxecute une fonction
+// TODO 4-2: Dans cette fonction on supprime la classe "maCouleur" sur titre
+// TODO 4-1: Sur le 3e lien placer un addEventListener qui écoute le "click" et éxecute une fonction
+// TODO 4-2: Dans cette fonction on toggle la classe "maCouleur" sur titre
+
+leTitre = document.getElementById("mainTitle");
+lesLiens = document.querySelectorAll("a");
+lesLiens[0].addEventListener('click',()=> {leTitre.classList.add("maCouleur")});
+lesLiens[1].addEventListener('click',()=> {leTitre.classList.remove("maCouleur")});
+lesLiens[2].addEventListener('click',()=> {leTitre.classList.toggle("maCouleur")});
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// **********************************************************
+// COURS 
+// **********************************************************
+
 /**
  * **************************************
  * 1-SETUP : DEFER
@@ -364,6 +472,7 @@
  * disposent par défaut de techniques internes pour télécharger les 
  * ressources en parallèle sans nécessairement attendre les autres.
  */
+
 
 /**
  * **************************************
@@ -383,6 +492,7 @@
  *! Il ne faudra pas non plus compter appeler document.write() pour écrire dans le document HTML
  *! puisqu'il sera impossible de savoir à quel moment les actions seront déclenchées.
  */ 
+
 
 /**
  * **************************************
@@ -407,6 +517,8 @@
 // console.log("Inférieur ou égal ? :",a <= b);
 // //! ici on demande si a est suppérieur ou égal à b
 // console.log("suppérieur ou égal ?:",a >= b);
+
+
 // //? Attention : de base JS ne prend pas en compte le typage des variables : 
 // //? ci dessous le nombre 2 est égal au caractère "2" 🤔
 // console.log("le chiffre 2 = \"2\"?:",2 == "2");
@@ -415,15 +527,18 @@
 // console.log("égalité stricte ?:",2 === "2");
 // //! il y a aussi l'inégalité stricte avec l'opérateur !==
 // console.log("inégalité stricte ?:",2 !== "2");
+
+
 // //? il existe aussi des opérateurs Logiques qui nous permet de combiner des conditions
 // //? && pour dire ET
 // //? || pour dire OU
 // //? ! pour dire Différent de
 // console.log(3==3 && 3<4);
 // console.log(3==3 || 3<4);
-
  //!-------CONDITIONS / Operateur TERNAIRES-------
-// ? on combine un opérateur de comparaison et l'opérateur ? pour établir une condition qui return une chose ou une autre chose
+
+
+ // ? on combine un opérateur de comparaison et l'opérateur ? pour établir une condition qui return une chose ou une autre chose
 // ? cela permet de faire une condition if (simple) avec une syntaxe racourcie
 // let whatIsYourAge = 6;
 // console.log(whatIsYourAge >18 ? '🍹':'👮‍♂️');
@@ -437,10 +552,14 @@
 // userPremium = 'YES';
 // console.log(userPremium?'OK 🤙':'Not OK 👺');
 
+
+
 // ? On peut utiliser des operateur aussi pour combiner des conditions && (pour ET) || (pour OU)
 // console.log(3==3&&3<4);
 // let typeUtilisateur = 'Extra';
 // console.log(typeUtilisateur == 'Extra' || typeUtilisateur == 'Premium');
+
+
 
 // //! Syntaxe ES6 Fonction fléchée (c'est beaucoup utilisé nottament dans des framework - librairies)
 // let somme = function(a, b) {
@@ -450,6 +569,8 @@
 // let leCalcul = (a, b) => a + b;
 // console.log(leCalcul(1, 2));
 
+
+
 //? L'instruction for...of permet de créer une boucle Array qui parcourt un objet itérable 
 //? (ce qui inclut les objets Array, Map, Set, String, TypedArray, l'objet arguments, etc.) 
 //? et qui permet d'exécuter une ou plusieurs instructions pour la valeur de chaque propriété.
@@ -457,6 +578,8 @@
 // for(let unElementTablo of listeFilm){
 //     console.log('boucle FOR...OF : ',unElementTablo);
 // };
+
+
 
 //? Parcourir les Objet  (Depuis javaScript ES8)
 //? La Method .keys() qui convertit les clés d'un objet en tableau
@@ -471,6 +594,7 @@
 // const convertedDataUser = Object.entries(userData);
 // console.log("les entrées de l'objet converties en array : ",convertedDataUser);
 
+
 //? bonus syntaxe en ƒ° classic
 //! Dans la fonction que l'on passe dans map(), si on met un 2nd param
 //! C'est l'index du tableau
@@ -478,38 +602,47 @@
     // x.style.color = "red";
     // console.log(i)
 
+
 //? bonus syntaxe en ƒ° fléchée
 // textesTab.map((x,i) => {
 //     x.style.color = "red";
 //     console.log(i)
 // });
 
+
 //? Bonus II le retour : utilisation de map pour placer un addEventListener sur chaque <p>
 // textesTab.map(toto => toto.addEventListener('click',function(){
 //     console.log("SUPER CA CLICK")
 // }));
+
+
+
 
 /**
  * **************************************
  * 14- Les Classes
  * **************************************
  */
-class UserProfile {
-    //! Pas besoin de déclarer function devant le constructor et méthodes
-    constructor(nameUser, mailUser, phoneUser) {
-      this.nameUser = nameUser;
-      this.mailUser = mailUser;
-      this.phoneUser = phoneUser;
-    }
-    getProfileInfo() {
-      console.log('this ',this);
-      return `infos de l'utilisateur : 
-              son nom : ${this.nameUser}
-              son mail : ${this.mailUser}
-              son Tél : ${this.phoneUser}`;
-    }
-  }
+// class UserProfile {
+//     //! Pas besoin de déclarer function devant le constructor et méthodes
+//     constructor(nameUser, mailUser, phoneUser) {
+      // Attribut en IN MODE : Attribut nécéssaire à la construction d'une instance.
+//       this.nameUser = nameUser;
+//       this.mailUser = mailUser;
+//       this.phoneUser = phoneUser;
+      // Attribut en outMode
+//       this.contact = phoneUser + mailUser;
+//       this.resume = this.getProfileInfo();
+//     }
+//     getProfileInfo() {
+//       console.log('this ',this);
+//       return `infos de l'utilisateur : 
+//               son nom : ${this.nameUser}
+//               son mail : ${this.mailUser}
+//               son Tél : ${this.phoneUser}`;
+//     }
+//   }
   
-  const exampleUser1 = new UserProfile("José", "jose@gmail.com", "09876543");
-  const exampleUser2 = new UserProfile("Sarah", "sarah@gmail.com", "063736252");
-  exampleUser2.getProfileInfo();
+//   const exampleUser1 = new UserProfile("José", "jose@gmail.com", "09876543");
+//   const exampleUser2 = new UserProfile("Sarah", "sarah@gmail.com", "063736252");
+//   exampleUser2.getProfileInfo();
