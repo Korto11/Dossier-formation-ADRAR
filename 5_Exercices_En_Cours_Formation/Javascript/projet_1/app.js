@@ -155,7 +155,7 @@
 // console.log(objectUser.passion);
 // console.log(objectUser.passion[1]);
 
-// // Bonus 
+// Bonus 
 
 // objectUser.name = "Grontrand";
 // objectUser.age = 42;
@@ -198,7 +198,7 @@
 //     track2:'David Hallyday',
 //     track3:'Crazy Frog'
 // }
-// // console.log(MyTracklist);
+// console.log(MyTracklist);
 
 // MyTracklist.track1 = 'félicien'
 // console.log(MyTracklist);
@@ -392,8 +392,8 @@
 // let firstImg = document.querySelector('img');
 // console.log(firstImg);
 
-// // firstTitle.style.backgroundColor = 'blue';
-// // firstTitle.style.color = 'beige';
+// firstTitle.style.backgroundColor = 'blue';
+// firstTitle.style.color = 'beige';
 
 // firstTitle.className = 'laClasse';
 // firstLink.href = 'https://www.google.com'
@@ -425,25 +425,218 @@
 // TODO 4-1: Sur le 3e lien placer un addEventListener qui écoute le "click" et éxecute une fonction
 // TODO 4-2: Dans cette fonction on toggle la classe "maCouleur" sur titre
 
-leTitre = document.getElementById("mainTitle");
-lesLiens = document.querySelectorAll("a");
-lesLiens[0].addEventListener('click',()=> {leTitre.classList.add("maCouleur")});
-lesLiens[1].addEventListener('click',()=> {leTitre.classList.remove("maCouleur")});
-lesLiens[2].addEventListener('click',()=> {leTitre.classList.toggle("maCouleur")});
+// leTitre = document.getElementById("mainTitle");
+// lesLiens = document.querySelectorAll("a");
+// lesLiens[0].addEventListener('click',()=> {leTitre.classList.add("maCouleur")});
+// lesLiens[1].addEventListener('click',()=> {leTitre.classList.remove("maCouleur")});
+// lesLiens[2].addEventListener('click',()=> {leTitre.classList.toggle("maCouleur")});
+
+
+// !EXO 24.5 
+// ** addEventListener - capter un évènement "click" - coord x - coord y
+// TODO 1: sur document, placer un addEventListener qui écoute le "click" et éxecute une fonction qui a unEvent en paramètre
+// TODO 2: Dans cette fonction on console log unEvent 
+// TODO 3: à partir du console log retrouver les propriétés de unEvent qui correspondent au coordonnées du click
+// TODO 4: Connaissez-vous des propriétés CSS dans lesquelles on peut se servir des coord du click pour le placer au bon endroit ? (pensez aussi à mettre la position de l'image. en absolute)
+
+
+// document.addEventListener('click',imgpop);
+
+// function imgpop(unEvent) {
+//   const image = document.createElement('img');
+//   image.setAttribute('src','john.png');
+//   image.style.position ="absolute";
+//   image.style.width = 100 + "px";
+//   image.style.height = 100 + "px";
+//   image.style.left = unEvent.x - 50 + "px";
+//   image.style.top = unEvent.y -50 + "px";
+//   document.body.append(image);
+// }
+
+// !EXO 24.5 
+// ** addEventListener - capter un évènement "click" - coord x - coord y
+// TODO 1: sur document, placer un addEventListener qui écoute le "click" et éxecute une fonction qui a unEvent en paramètre
+// TODO 2: Dans cette fonction on console log unEvent 
+// TODO 3: à partir du console log retrouver les propriétés de unEvent qui correspondent au coordonnées du click
+// TODO 4: Connaissez-vous des propriétés CSS dans lesquelles on peut se servir des coord du click pour le placer au bon endroit ? 
+// document.addEventListener('click', function(eventClick){
+//   console.log(eventClick);
+//   console.log('Les coord : ',eventClick.x, eventClick.y);
+  // On Créer une image
+//   const monImg = document.createElement('img');
+//   const tailleImg = 150;
+  // On rajoute une src à l'image
+//   monImg.setAttribute('src', `https://picsum.photos/${tailleImg}/${tailleImg}`);
+  // On modifie le type de position de l'image
+//   monImg.style.position = 'absolute';
+  // On modifie la position top de l'image
+//   monImg.style.top = eventClick.y - tailleImg /2 +'px';
+  // On modifie la position left de l'image
+//   monImg.style.left = eventClick.x -tailleImg /2 +'px';
+  //On place l'image fraichement créee dans le body de la page
+//   document.body.append(monImg);
+// });
+
+//! EXO LOAD
+// ** addEventListener - load
+// TODO 1: récupérer toutes les images dans une variable lesImages
+// TODO 2: Dans une v ariable tabImg on transforme lesImages en tableau avec Array.from()
+// TODO 3-1: Sur tabImg on utilise la fonction map().
+// TODO 3-2: Dans map(), on lui passe une F => qui prend 2 params : uneImage et index
+// TODO 3-3: Dansla F =>, sur uneImage on place un addEventListener qui écoute "load" et éxecute une Fonction
+// TODO 3-4: Dans la F du addEventListener, on affiche index en consoles
+
+
+// lesImg = document.querySelectorAll('img');
+// tabImg = Array.from(lesImg);
+// console.log(tabImg);
+// const mapImg = tabImg.map( function(uneImage,index) { 
+//   uneImage.addEventListener('load',function(){  
+//     console.log(index);
+//     })
+//   });
+
+//   Jefffff — Aujourd’hui à 13:41
+//   //! EXO LOAD
+  // ** addEventListener - load
+  // TODO 1: récupérer toutes les images dans une variable lesImages
+  // TODO 2: Dans une variable tabImg on transforme lesImages en tableau avec Array.from()
+  // TODO 3-1: Sur tabImg on utilise la fonction map().
+  // TODO 3-2: Dans map(), on lui passe une F => qui prend 2 params : uneImage et index
+  // TODO 3-3: Dansla F =>, sur uneImage on place un addEventListener qui écoute "load" et éxecute une Fonction
+  // TODO 3-4: Dans la F du addEventListener, on affiche index en consoles
+//   let lesImages = document.querySelectorAll(`img`);
+//   console.log(lesImages);
+//   let tabImg = Array.from(lesImages);
+//   console.log(tabImg);
+//   tabImg.map(function (uneImage, index) {
+//     uneImage.addEventListener("load", function () {
+//       console.log(`Image numéro : ${index} – vient de finir de charger.`);
+//     });
+//   });
 
 
 
 
+// !EXO 24.2 addEventListener - "mouseout" - display
+// addEventListener - "mouseout" - display
+// TODO: EN CSS le titre H3 à un display à none
+// TODO 1: Dans une variable monTitre, récupérer le titre h3
+// TODO 2: Sur document, placer un addEventListener qui écoute "mouseout" et qui execute une fonction
+// TODO 3: dans cette fonction, on va modifier dans le style de monTitre le display que l'on met à "block"
+
+// mouseout prend en compte les enfants alors que mouseleave ne prend que le bloc entier
+// monTitre = document.querySelector('h3');
+// main = document.querySelector('h1');
+// monEvent = main.addEventListener('mouseout',()=> {
+//   monTitre.setAttribute('style','display:block;');
+//   console.log('pouet');
+//   monTitre.innerText = 'Tu as gagné 1 millions de Dollars';
+// });
 
 
 
+// !EXO 24.2 addEventListener - "mouseout" - display
+// addEventListener - "mouseout" - display
+// TODO: EN CSS le titre H3 à un display à none
+// TODO 1: Dans une variable monTitre, récupérer le titre h3
+// TODO 2: Sur document, placer un addEventListener qui écoute "mouseout" et qui execute une fonction
+// TODO 3: dans cette fonction, on va modifier dans le style de monTitre le display que l'on met à "block"
+// const h3Title = document.querySelector('#mouseOut');
+// const mainContainer = document.querySelector('#mainContainer');
+// let lesImagesFirst = document.querySelectorAll(`img`)[0];
+
+// console.log(h3Title);
+// document.addEventListener('mouseleave',()=>{
+//     //? Comme vu pour les objets on peux accèder aux propriétés dans l'objet style de l'element 
+//     h3Title.style.display = 'block';
+//     h3Title.style.color = 'red';
+//     h3Title.style.backgroundColor = 'chartreuse';
+//     h3Title.innerText = 'Tu as gagné 1 millions de Dollars';
+// });
 
 
 
+// /
+//  *! **
+//  *! FOCUS - BLUR
+//  *! **
+//  */
+//! EXO 24.3  addEventListener - focus - blur
+// TODO 1: récupérer l'input dans une variable leInput
+// TODO 2-1: sur leInput, utiliser addEventListener pour surveiller "focus" 
+// TODO 2-2:et execute une fonction qui modif la bg color de leInput en (couleur au choix)
+// TODO 3-1: sur leInput, utiliser addEventListener pour surveiller "blur"
+// TODO 3-2: et execute une fonction qui modif la bg color de leInput en blanc ou transparent
+// listeFilm.forEach(i => console.log(i)); 
+
+// leInput = document.querySelectorAll("input");
+// console.log(leInput);
+// tabInput = Array.from(leInput);
+// tabInput.map( i => { 
+//   i.addEventListener('focus',() => { 
+//     i.style.backgroundColor = 'blue';
+//     i.style.color ='white';
+//     }
+//   )}
+// )
+// tabInput.map( i => { 
+//   i.addEventListener('blur',() => { 
+//     i.style.backgroundColor = 'white';
+//     i.style.color ='black';
+//     }
+//   )}
+// )
+
+  // SANS TABLEAU
+// leInput = document.querySelectorAll("input");
+// leInput.forEach(i => { 
+//     i.addEventListener('focus',() => { 
+//       i.style.backgroundColor = 'blue';
+//       i.style.color ='white';
+//       })})
+// leInput.forEach(i => { 
+//     i.addEventListener('blur',() => { 
+//       i.style.backgroundColor = 'white';
+//       i.style.color ='black';
+//       })})      
 
 
+// const formTitleInput = document.querySelector('#titleInput');
+// TEST avec FOCUS
+// formTitleInput.addEventListener("focus", function() {
+//     formTitleInput.style.backgroundColor = "royalBlue";
+//     formTitleInput.style.color = "white";
+// });
+// TEST avec Blur
+// formTitleInput.addEventListener("blur", function() {
+//     formTitleInput.style.backgroundColor = "transparent";
+//     formTitleInput.style.color = "black";
+// });
 
 
+// ! Exo SCROLL
+// ** addEventListener - capter un évènement "scroll" - scrollHeight  - innerHeight - scrollY
+// TODO 1: Dans une variable laBar, récupérer la div qui possède la classe .bar
+// TODO 2: Sur document, placer un addEventListener qui écoute "scroll" et execute une fonction
+// TODO 3: dans cette fonction, on console log document.body.scrollHeight (la hauteur de page), innerHeight (hauteur de l'affichage) et scrollY (la position du scroll)
+// TODO 4: Ensuite, dans une variable scrollMax, on soustrait à document.body.scrollHeight, innerHeight
+// TODO 5: Dans une variable onEstOu, on fait un pourcentage de scrollY sur scrollMax
+// TODO 6: Modifier dans le style de laBar, la width en lui assignant onEstOu en "%"
+
+laBar = document.getElementsByClassName("bar")[0];
+console.log(laBar);
+document.addEventListener('scroll', () => {
+  console.log(`
+      Hauteur page : ${document.body.scrollHeight}
+      Hauteur affichage : ${innerHeight}
+      Scroll Position : ${scrollY}
+      `
+    );
+    scrollMax = document.body.scrollHeight - innerHeight;
+    onEstOu = (scrollY/scrollMax)*100;
+    laBar.style.width =`${onEstOu}%`; 
+})
 
 
 
