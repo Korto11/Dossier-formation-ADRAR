@@ -624,22 +624,200 @@
 // TODO 5: Dans une variable onEstOu, on fait un pourcentage de scrollY sur scrollMax
 // TODO 6: Modifier dans le style de laBar, la width en lui assignant onEstOu en "%"
 
-laBar = document.getElementsByClassName("bar")[0];
-console.log(laBar);
-document.addEventListener('scroll', () => {
-  console.log(`
-      Hauteur page : ${document.body.scrollHeight}
-      Hauteur affichage : ${innerHeight}
-      Scroll Position : ${scrollY}
-      `
-    );
-    scrollMax = document.body.scrollHeight - innerHeight;
-    onEstOu = (scrollY/scrollMax)*100;
-    laBar.style.width =`${onEstOu}%`; 
-})
+// laBar = document.getElementsByClassName("bar")[0];
+// console.log(laBar);
+// document.addEventListener('scroll', () => {
+//   console.log(`
+//       Hauteur page : ${document.body.scrollHeight}
+//       Hauteur affichage : ${innerHeight}
+//       Scroll Position : ${scrollY}
+//       `
+//     );
+//     scrollMax = document.body.scrollHeight - innerHeight;
+//     onEstOu = (scrollY/scrollMax)*100;
+//     laBar.style.width =`${onEstOu}%`; 
+// })
+
+
+// //! EXO 24.4
+// TODO 1: récupérer le textarea du formulaire dans une variable txt
+// TODO 2: récupérer le button du formulaire dans une variable btn
+// TODO 3-1: Sur txt placer un addEventListener qui écoute les touches clavier "keyup" et éxecute une fonction
+// TODO 3-2: Dans cette fonction, si ce qu'on tape dans l'input (sa valeur) dépasse 5 caractères alors on désactive le button
+
+// txt = document.querySelector("#formMessage");
+// btn = document.querySelector("#formSubmitBtn");
+// txt.addEventListener ("keyup",() => txt.value.length>5 ? btn.disabled = true : btn.disabled = false )
+
+// Correction
+ 
+// const monTextArea = document.querySelector('#formMessage');
+// const monBtn = document.querySelector('#formSubmitBtn');
+// console.log(monTextArea);
+// console.log(monBtn);
+
+// monTextArea.addEventListener('keyup',()=>{
+    // ? Mode cond ternaires
+    // monBtn.disabled = monTextArea.value.length>=5 ? true : false;
+    // ? Mode IF classique 
+    // if(monTextArea.value.length>=5){
+    //    monBtn.disabled = true;
+    // }
+    // else{
+    //     monBtn.disabled = false
+    // }
+// });
+
+
+// ** preventDefault - addEventListener - "submit" - form.reset()
+// TODO 1: récupérer le formulaire dans une variable monForm
+// TODO 2-1: sur monForm on place un addEventListener qui écoute "submit" et qui exécute une fonction qui a event en paramètre (on veut capter l'event)
+// TODO 2-2: Dans cette fonction, sur event on utilise la fonction preventDefault()
+// TODO 3-2: Puis on console log event
+// TODO 3-3 : sur monForm on utilise la fonction .reset()
+
+// monForm = document.querySelector("#myForm");
+// monForm.addEventListener('submit', (event) => { 
+//   event.preventDefault();
+//   console.log(event);
+//   monForm.reset();
+//   }
+// )
+
+
+// ! Exo SetTimeout
+// ** setTimeout() - innerHtml - opacity - backgroundColor
+// TODO 1: Dans une variable monTitre, récupérer le titre h2
+// TODO 2: on execute la fonction setTimeout() qui prend 2 paramètres: une fonction et un nombre (les miliseconde)
+// TODO 3: dans la fonction en param de setTimeout(),modifier dans le style de monTitre l'opacité  que l'on met à 1
+// TODO 3-2: modifier dans le style de monTitre le background color  que l'on met à (couleur au choix)
+// TODO: 3-3: assigner une chaine de caractères (au choix) au innerHTML de monTitre 
+ 
+
+// monTitre = document.querySelector('h2');
+// monGrosTitre = document.querySelector('h1');
+// mesImg = document.querySelectorAll('img');
+// setTimeout(funct,5000);
+// function funct()  {
+// monTitre.style.opacity =1;
+// monTitre.style.backgroundColor = "red";
+// monTitre.innerHTML = "YOU CAN'T SEE ME"
+// monGrosTitre.style.opacity =1;
+// monGrosTitre.style.backgroundColor = "red";
+// monGrosTitre.innerHTML = "The sun in the sky is red,";
+// tabImg = Array.from(mesImg);
+// tabImg.forEach( i => {
+//   i.setAttribute('src','john.png');
+// });
+// }
+
+//! EXO SetInterval 
+// ** Executer 1 script ttes les X sec - addEventListener - click - innerHTML
+// TODO 1: récupérer le titre h3 dans une variable monTitre
+// TODO 2: créer une variable timer initialisée à 3
+// TODO 3-1: sur monTitre on place un addEventListener qui surveille le click et qui exécute une fonction
+// TODO 3-2: Dans cette fonction, créer une variable countDown à laquelle on assigne la fonction setInterval()
+// TODO 3-3: setInterval() prend en 1er param, une fonction et en 2e param 1000 ms
+// TODO 4-1: Dans la fonction de setInterval(), SI timer est supperieur à 0, on assigne au innerHTML de monTitre, timer
+// TODO 4-1: SINON, on assigne au innerHTML de monTitre, "GO GO GO", ensuite on utilise clearInterval pour stopper l'intervale
+// TODO 5: Après ces conditions, on décrémente timer
+
+
+// monTitre = document.querySelector('h3');
+// let timer = 3;
+// monTitre.addEventListener('click', () => {
+// let countDown = setInterval(()=> {
+//   if ( timer > 0 ) {
+//     monTitre.innerHTML = timer;
+//   } else {
+//     monTitre.innerHTML = "GO GO GO GO GO GO ";
+//     clearInterval(countDown);
+//   }
+//   timer--; }
+// ,1000);
+// });
+// class Imc {
+//   constructor(nom,poids,taille) {
+//     this._nom = nom;
+//     this._poids = poids;
+//     this._taille = taille;
+//   }
+//   calculImc() {
+//     let imc = this._poids/this._taille**2;
+//     let imcr1 = imc.toFixed(2);
+//     let imcr2 = Number.parseFloat(imcr1);
+//     return imcr2
+//   }
+//   display() {
+//     console.log(`Bonjour ${this._nom} avec une taille de ${this._taille} et un poids de ${this._poids}, votre IMC est de ${this.calculImc()}.`)
+//   }
+// }
+
+// let list = [
+//   new Imc("Sébastien Chabal", 135, 1.7),
+//   new Imc("Escaladeuse", 45, 1.68),
+//   new Imc("JOJO ", 300, 2),
+//   new Imc("Gontrand ", 90, 1.75),
+//   new Imc("Colonel Clock ", 200, 1.75),
+//   new Imc("JOsiane de la Vega", 99, 1.55),
+// ];
+
+// list.forEach(i => i.display());
+// // Scénario
+
+
+class Pme {
+  constructor (nom,equipe,revenu,fraisFixe,fraisAchat,) {
+    this._nom = nom;
+    this._equipe = equipe;
+    this._revenu = revenu;
+    this._coutFixe = fraisFixe + fraisAchat;
+    this._depenses = this.depenses();
+  }
+  depenses() {
+    return this._fraisAchat + this._fraisFixe + this.equipe.forEach(element => { 
+      getCout()
+    });
+  }
+  bilanCalculed() {
+    console.log(`${this._nom} - : Cout Initial : ${this._coutFixe} `)
+    console.log(`${this._nom} - : Cout Total Equipe : ${depense()}`)
+  }
+}
+
+class Employee {
+  constructor (nom,prenom,age,salaire){
+    this._nom = nom;
+    this._prenom = prenom;
+    this._age = age;
+    this._salaire = salaire;
+    this._cout = this.calculCout() 
+    }
+  calculCout() {
+    const période = 12;
+    const taux = 0.9;
+    return this._salaire*période*(1+taux);
+  }
+  getCout() {
+    return this._cout;
+  }
+}
 
 
 
+
+const pme = new Pme (
+  //Le nom entreprise
+    "Ma Petite Entreprise - ", 
+    //L'equipe de salariés (un tableau)
+    [new Employee ("Duval", "Paul", 30, 2000),
+    new Employee ("Durand", "Alain", 40, 3000),
+    new Employee ("Dois", "Sylvia", 50, 4000),],
+     //le revenu , frais fixe, frais d'achat
+    300000,
+    20000,
+    50000);
+pme.bilanCalculed();
 
 
 
