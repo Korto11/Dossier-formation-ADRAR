@@ -766,58 +766,282 @@
 // // Scénario
 
 
-class Pme {
-  constructor (nom,equipe,revenu,fraisFixe,fraisAchat,) {
-    this._nom = nom;
-    this._equipe = equipe;
-    this._revenu = revenu;
-    this._coutFixe = fraisFixe + fraisAchat;
-    this._depenses = this.depenses();
-  }
-  depenses() {
-    return this._fraisAchat + this._fraisFixe + this.equipe.forEach(element => { 
-      getCout()
-    });
-  }
-  bilanCalculed() {
-    console.log(`${this._nom} - : Cout Initial : ${this._coutFixe} `)
-    console.log(`${this._nom} - : Cout Total Equipe : ${depense()}`)
-  }
-}
+// class Pme {
+//   constructor (nom,equipe,revenu,fraisFixe,fraisAchat,) {
+//     this._nom = nom;
+//     this._equipe = equipe;
+//     this._coutFixe = fraisFixe + fraisAchat;
+//     this._revenu = revenu;
+//     this._bilan = 0;
+//   }
+ 
+//   bilanCalculed() {
+//     let salaires = 0;
+//     console.log(`${this._nom} - : Cout Initial : ${this._coutFixe} `);
+//     for (let i of this._equipe){
+//       salaires +=  i.getCout();
+//     }
+//     console.log(`${this._nom} - : Cout Total Equipe : ${salaires}`);
+//     console.log(`${this._nom} : VENTES : ${this._revenu}`);
+//     this._bilan = this._revenu - (this._coutFixe + salaires);
+//     console.log(`${this._nom} : BILAN : ${this._bilan}`);
+    
 
-class Employee {
-  constructor (nom,prenom,age,salaire){
-    this._nom = nom;
-    this._prenom = prenom;
-    this._age = age;
-    this._salaire = salaire;
-    this._cout = this.calculCout() 
-    }
-  calculCout() {
-    const période = 12;
-    const taux = 0.9;
-    return this._salaire*période*(1+taux);
-  }
-  getCout() {
-    return this._cout;
-  }
-}
+//   }
+// }
+
+// class Employee {
+//   constructor (nom,prenom,age,salaire){
+//     this._nom = nom;
+//     this._prenom = prenom;
+//     this._age = age;
+//     this._salaire = salaire;
+//     this._cout = this.calculCout() 
+//     }
+//   calculCout() {
+//     const période = 12;
+//     const taux = 0.9;
+//     return this._salaire*période*(1+taux);
+//   }
+//   getCout() {
+//     return this._cout;
+//   }
+// }
+
+
+
+// const pme = new Pme (
+//   //Le nom entreprise
+//     "Ma Petite Entreprise - ", 
+//     //L'equipe de salariés (un tableau)
+//     [new Employee ("Duval", "Paul", 30, 2000),
+//     new Employee ("Durand", "Alain", 40, 3000),
+//     new Employee ("Dois", "Sylvia", 50, 4000),],
+//      //le revenu , frais fixe, frais d'achat
+//     300000,
+//     20000,
+//     50000);
+// pme.bilanCalculed();
+
+// ** mini éditeur de texte - addEventListener - keyup - innerHTML
+// TODO 1: récupérer le textarea dans une variable monTxt
+// TODO 2: récupérer la div (celle avec l'id formrender ?) dans une variable rendu
+// TODO 3-1: sur monTxt on place un addEventListener qui surveille le clavier et qui exécute une fonction
+// TODO 3-2: Dans cette fonction, au innerHTML de rendu on assigne la VALEUR contenue dans monTxt
+
+// monTxt = document.querySelector('textarea');
+// rendu = document.querySelector('#formRender')
+// monTxt.addEventListener('keyup',() => {
+//   rendu.innerHTML = monTxt.value
+// })
+
+// TODO 1: récupérer le textarea dans une variable monTxt
+// TODO 2: récupérer la div dans une variable rendu
+// TODO 3: à la valeur contenue dans monTxt on assigne localStorage, sur localStorage on utilise la fonction getItem("monSuperTexte")
+// TODO 4-1: ensuite, SI la valeur dans monTxt est définie,
+// TODO 4-2: alors on assigne au innerHTML de rendu, localStorage sur lequel on utilise la fonction getItem("monSuperTexte")
+// TODO 5-1: (en dehors du IF)Sur monTxt on place un addEventListener qui surveillle le clavier et exécute une fonction
+// TODO 5-2: Dans cette fonction, sur localStorage on utilise la fonction setItem
+// TODO 5-3: setItem() prend en 1er param "monSuperTexte", et en 2e param la valeur contenue dans monTxt
+// TODO 5-4: on assigne au innerHTML de rendu la valeur contenue dans monTxt
+
+
+// monTxt = document.querySelector('textarea');
+// rendu = document.querySelector('#formRender');
+// monTxt.value = localStorage.getItem("monSuperTexte");
+// if (monTxt.value == true) {
+// rendu.InnerHTML = localStorage.getItem("monSuperTexte");
+// }
+// monTxt.addEventListener('keyup',() => {
+//   localStorage.setItem("monSuperTexte",monTxt.value)
+// });
+// rendu.InnerHTML = monTxt.value;
+
+
+// const monTxt = document.querySelector("textarea");
+// const rendu = document.querySelector("#formRender");
+// ?On va pré remplir le textarea avec ce que l'on récupère dans le localStorage
+// monTxt.value = localStorage.getItem('monSuperTexte');
+// ? Si monTxt.value est définit alors on rempli la Div avec ce qu'on récupère dans le local storage
+// if(monTxt.value){
+//     rendu.innerText = localStorage.getItem('monSuperTexte');
+// };
+// ?On détecte ce que tape l'utilisateur dans le textarea
+// monTxt.addEventListener("keyup", function() {
+// ?On enregistre ce que tape l'utilisateur dans le localStorage sous le nom "monSuperTexte"
+// localStorage.setItem('monSuperTexte',monTxt.value);
+//?On affiche ce que tape l'utilisateur traduit en marked dans la div     
+    // rendu.innerHTML =marked(monTxt.value);
+//     rendu.innerHTML =marked.parse(monTxt.value);
+// });
+
+
+// try{
+//   prenom
+//   alert('Bonjour');  
+// }catch(err){
+//   alert(`Erreur Détectée ALERTE STOPPEZ TOUT: 
+//       -----------
+//       Le Nom de l'erreur 
+//       ${err.name}
+//       -----------
+//       Le Message de l'erreur  :
+//       ${err.message}
+//       ----------
+//       L'emplacement de l'erreur:
+//       ${err.stack}`);
+// }
+// alert(`Ce message s'affiche correctement`);
+
+
+
+// function division(){
+//   let x = prompt('Entrez un premier nombre (numérateur)');
+//   let y = prompt('Entrez un deuxième nombre (dénominateur)');
+  
+//   if(isNaN(x) || isNaN(y) || x == '' || y == ''){
+//       throw new Error('Merci de rentrer deux nombres');
+//   }else if(y == 0){
+//       throw new Error('Division par 0 impossible')
+//   }else{
+//       alert(x / y);
+//   }
+// }
+
+// division();
+
+
+// ? CLASSE HERITEE
+
+// //! Le nom de la classe commence tjrs par majuscule
+// class UserProfile {
+//   //! Pas besoin de déclarer function devant le constructor et méthodes
+//   constructor(nameUser, mailUser, phoneUser) {
+    // Attribut en IN MODE
+//     this.nameUser = nameUser;
+//     this.mailUser = mailUser;
+//     this.phoneUser = phoneUser;
+    // Attribut en outMode
+//     this.contact = phoneUser + mailUser;
+//     this.resume = this.getProfileInfo();
+
+    // this._nom = nom;  
+//   }
+//   getProfileInfo() {
+//     console.log('this ',this);
+//     return `infos de l'utilisateur : 
+//             son nom : ${this.nameUser}
+//             son mail : ${this.mailUser}
+//             son Tél : ${this.phoneUser}`;
+//   }
+// }
+
+// const exampleUser1 = new UserProfile("José", "jose@gmail.com", "09876543");
+// const exampleUser2 = new UserProfile("Sarah", "sarah@gmail.com", "063736252");
+// exampleUser2.getProfileInfo();
+
+// Afficher les infos userProfile dans la page web
+// function affichagePageWeb(oneUser) {
+//   const h2element = document.querySelector("h2");
+//   h2element.innerText = oneUser.getProfileInfo();
+// }
+
+// affichagePageWeb(exampleUser1);
+
+// class UserAdmin extends UserProfile {
+//   constructor(unNom, unMail, unPhone, sector, personnalPhone) {
+//     super(unNom, unMail, unPhone); //! Appel au constructor du parent
+//     this.sector = sector;
+//     this.personnalPhone = personnalPhone;
+//   }
+//   getAdminInfo() {
+//     return `infos de l'utilisateur : 
+//         son nom : ${this.nameUser}
+//         son secteur d'intervention : ${this.sector}
+//         son Tél Personnel : ${this.personnalPhone}`;
+//   }
+// }
+
+// const exampleAdmin1 = new UserAdmin(
+//   "Jacky",
+//   "jack@gmail.com",
+//   "012345678",
+//   "administration",
+//   "0987654323"
+// );
+
+// console.log(exampleAdmin1.getAdminInfo());
+
+
+
+// TODO 1: récupérer le titre h2 dans une variable apiDiv
+// TODO 2-1: créer une variable contactAPI à laquelle on assigne une fonction fléchée
+// TODO 2-2: dans la F =>, créer une variable data à laquelle on assigne la fonction fetch()
+// TODO 2-3: fetch(), prend en param l'Url de l'API
+// TODO 2-4: Faire un console.log de data
+// TODO 3-1: Tjrs dans la F =>,créer une variable dataTransformed à laquelle on assigne data
+// TODO 3-2: sur la variable data on utilise la fonction .json()
+// TODO 3-3: Faire un console log de dataTransformed
+// TODO 4-1: Tjrs dans la F =>,au InnerHTML de apiDiv, assigner la value dans dataTransformed
+// TODO 5: on éxecute notre fonction contactAPI quelquepart dans notre programme
+
+
+// let apiDiv = document.querySelector('#apiContact');
+// let contactAPI = () => {
+//   let data = fetch('https://api.open-meteo.com/v1/forecast?latitude=52.52&longitude=13.41&hourly=temperature_2m');
+//   console.log(data);
+//   let dataTransformed = data;
+//   data.json();
+//   console.log(dataTransformed);
+//   apiDiv.innerHTML = dataTransformed.value;
+// }
+
+// contactAPI()
+
+
+
+const apiDiv = document.querySelector('.apiContact');
+//de base une ƒ° => est anonyme, astuce pour désanonymiser, on la stocke dans une variable
+const contactApi = async () => {
+    //Data va récup Toutes les données de l'api
+    const data =  await fetch('https://api.open-meteo.com/v1/forecast?latitude=52.52&longitude=13.41&hourly=temperature_2m');
+    console.log(data);
+    //Plutot que de Travailler sur la réponse, on va la transformé pour 
+    //qu'elle deviennt un OBJET JS (+ pratique)
+    const dataTransformed =  await data.json();
+    console.log(dataTransformed);
+    apiDiv.innerText = dataTransformed.latitude;
+};
+contactApi();
 
 
 
 
-const pme = new Pme (
-  //Le nom entreprise
-    "Ma Petite Entreprise - ", 
-    //L'equipe de salariés (un tableau)
-    [new Employee ("Duval", "Paul", 30, 2000),
-    new Employee ("Durand", "Alain", 40, 3000),
-    new Employee ("Dois", "Sylvia", 50, 4000),],
-     //le revenu , frais fixe, frais d'achat
-    300000,
-    20000,
-    50000);
-pme.bilanCalculed();
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
