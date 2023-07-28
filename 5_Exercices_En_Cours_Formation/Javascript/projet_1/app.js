@@ -1,3 +1,7 @@
+
+
+// ***EXERCICE SELECTION ELEMENT HTML***
+
 // let tamere = document.body.getElementsByTagName('p');
 // let pSuper = document.body.getElementsByClassName('super');
 // let pSpecial = document.getElementById('special');
@@ -6,7 +10,7 @@
 // console.log(pSpecial);
 
 
-
+// *** EXERCICE SUR LES OBJETS ***
 
 // let pizza = {
 // quantité : 2,
@@ -22,6 +26,11 @@
 // "Arrête de me trancher la route!"`
 // console.log(SumUpOrderPhrase);
 
+// Notes : Utiliser `` pour retranscrire le texte tel quel et ${} pour y insérer des valeurs stockées en variables.
+
+
+
+// *** EXERCICE CONCATENATION ***
 
 
 // let bonjour = 'Bonjour';
@@ -43,13 +52,13 @@
 // let date = '12-12-2012';
 // let nomPizzeria = `"La Pizzeria Rafinata"`
 // let SumUpOrderPhrase = `le ${date} Bonjour cher ${nomUser}, merci d'avoir passé commande chez ${nomPizzeria}, votre pizza :  ${product}, arrive sous 30 minutes
-
-
 // Qu'est-ce qu'une pizza dit à une autre pizza qui lui demandait 
 // des conseils ? "Suis ta pate et tout ira bien"`;
-
 // console.log(SumUpOrderPhrase);
 
+
+
+// *** EXERCICES FONCTIONS BASIQUES ***
 
 
 // let leNom = "Soler";
@@ -57,14 +66,12 @@
 // let laPhrase=[];
 // laPhrase.push(leNom,lePrénom,leNom[0]+lePrénom[0]);
 // console.log(laPhrase);
-
 // function fonction(nbre) {
 //     console.log(33+nbre);
 // }
 // function fonction2(n1,n2) {
 //     console.log(n1+n2);
 // }
-
 // console.log(fonction(7),fonction2(13,27));
 // console.log('Bienvenue dans Javascript');
 // let string = "bonjour";
@@ -81,14 +88,11 @@
 // console.log(array);
 // console.log(object);
 // let hello = helloworld("Hello World");
-
-
 // function moyenne (notePhilo,coeffPhilo,noteSport,coeffSport) {
 //     let moyenne = (notePhilo*coeffPhilo+noteSport*coeffSport) / (coeffSport+coeffPhilo);
 //     return moyenne;
 // }
 // console.log(moyenne(12,2,18,3));
-
 // let notes =[];
 // let coeffs =[];
 // function Notes (note,coeff) {
@@ -116,6 +120,15 @@
 // }
 // moyenne ();
 
+
+
+
+// *** EXEMPLE ADD EVENT LISTENER CLICK ***
+
+
+
+
+
 // document.addEventListener('click',(clickEvent)=>{
 //     console.log(clickEvent);
 //     console.log(`Tu as clické ici : 
@@ -123,8 +136,16 @@
 //     à ce moment : ${clickEvent.timeStamp}`);
 // });
 
+
+
+
+// *** EXERCICE TABLEAUX ET OBJETS ***
+
+
 // ? syntaxe  { uneProprieté:uneValeur } 
 // ? dans un objet on assigne avec : plutot qu'avec = 
+
+
 // let user = {
 //     id:3657826,
 //     'name':'Seagal',
@@ -146,11 +167,13 @@
 // console.log(tabUser[2]);
 // console.log(tabUser[2][1]);
 
+
+// ***Un objet permet de stocker plusieurs données dans une seule variable***
 // let objectUser = {
 //     name : "Jacky" ,
 //     age : 24,
 // }
-// objectUser.passion = ["nature","peinture"] ;
+// objectUser.passion = ["nature","peinture"] ;   *** lorsque l'on ajoute une entrée à un objet, elle est automatiquement créer si elle n'existe pas déja ***
 // console.log(objectUser.name);
 // console.log(objectUser.passion);
 // console.log(objectUser.passion[1]);
@@ -164,6 +187,31 @@
 // console.log(objectUser.age);
 // console.log(objectUser.passion);
 // console.log(objectUser.passion[1]);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 // let listeFilm = ['Ultime Décision','Mission Alcatraz','Attack Force'];
 // listeFilm.forEach(i => console.log(i)); 
@@ -766,6 +814,28 @@
 // // Scénario
 
 
+<<<<<<< HEAD
+class Pme {
+  constructor (nom,equipe,revenu,fraisFixe,fraisAchat,) {
+    this._nom = nom;
+    this._equipe = equipe;
+    this._revenu = revenu;
+    this._coutFixe = fraisFixe + fraisAchat;
+    this._depenses = this.depenses();
+    this._coutEquipe = this._equipe.forEach(element => { 
+      getCout()
+    });
+  }
+  depenses() {
+    return this._fraisAchat + this._fraisFixe + this._coutEquipe
+  }
+  bilanCalculed() {
+    console.log(`${this._nom} - : Cout Initial : ${this._coutFixe} `)
+    console.log(`${this._nom} - : Cout Total Equipe : ${depense()}`)
+    console.log(`${this._nom} - : Cout Total Equipe : ${depense()}`)
+  }
+  }
+=======
 // class Pme {
 //   constructor (nom,equipe,revenu,fraisFixe,fraisAchat,) {
 //     this._nom = nom;
@@ -1036,6 +1106,7 @@ contactApi();
 
 
 
+>>>>>>> de64b886a7c8b2815548fc89f82181fb8a2092ad
 
 
 
