@@ -1,0 +1,14 @@
+.display {
+    display: flex;
+    flex-direction: column;
+    width: 607.5px;
+    height: 1080px; 
+    background-color: green;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.accueil-logo {
+    width: 200px;
+    height: 200px;
+}
