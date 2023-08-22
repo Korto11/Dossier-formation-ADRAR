@@ -814,28 +814,6 @@
 // // Scénario
 
 
-<<<<<<< HEAD
-class Pme {
-  constructor (nom,equipe,revenu,fraisFixe,fraisAchat,) {
-    this._nom = nom;
-    this._equipe = equipe;
-    this._revenu = revenu;
-    this._coutFixe = fraisFixe + fraisAchat;
-    this._depenses = this.depenses();
-    this._coutEquipe = this._equipe.forEach(element => { 
-      getCout()
-    });
-  }
-  depenses() {
-    return this._fraisAchat + this._fraisFixe + this._coutEquipe
-  }
-  bilanCalculed() {
-    console.log(`${this._nom} - : Cout Initial : ${this._coutFixe} `)
-    console.log(`${this._nom} - : Cout Total Equipe : ${depense()}`)
-    console.log(`${this._nom} - : Cout Total Equipe : ${depense()}`)
-  }
-  }
-=======
 // class Pme {
 //   constructor (nom,equipe,revenu,fraisFixe,fraisAchat,) {
 //     this._nom = nom;
@@ -1070,19 +1048,69 @@ class Pme {
 
 
 
-const apiDiv = document.querySelector('.apiContact');
-//de base une ƒ° => est anonyme, astuce pour désanonymiser, on la stocke dans une variable
-const contactApi = async () => {
-    //Data va récup Toutes les données de l'api
-    const data =  await fetch('https://api.open-meteo.com/v1/forecast?latitude=52.52&longitude=13.41&hourly=temperature_2m');
-    console.log(data);
-    //Plutot que de Travailler sur la réponse, on va la transformé pour 
-    //qu'elle deviennt un OBJET JS (+ pratique)
-    const dataTransformed =  await data.json();
-    console.log(dataTransformed);
-    apiDiv.innerText = dataTransformed.latitude;
-};
-contactApi();
+// const apiDiv = document.querySelector('.apiContact');
+// //de base une ƒ° => est anonyme, astuce pour désanonymiser, on la stocke dans une variable
+// const contactApi = async () => {
+//     //Data va récup Toutes les données de l'api
+//     const data =  await fetch('https://api.open-meteo.com/v1/forecast?latitude=52.52&longitude=13.41&hourly=temperature_2m');
+//     console.log(data);
+//     //Plutot que de Travailler sur la réponse, on va la transformé pour 
+//     //qu'elle deviennt un OBJET JS (+ pratique)
+//     const dataTransformed =  await data.json();
+//     console.log(dataTransformed);
+//     apiDiv.innerText = dataTransformed.latitude;
+// };
+// contactApi();
+
+// const nbr = parseInt(prompt('saisir le nombre de chocolatines à facturer'));
+// let pchoco = 1.40;
+// function chocolatines (chocos) {
+//   if ( chocos == 0 || !Number.isInteger(chocos)) {
+//     console.log("erreur")
+//   }
+//   if ( chocos <= 10 ) {
+//     return pchoco;
+//   } else if ( chocos > 10 && chocos <= 20 ) {
+//     pchoco = (10*pchoco+((chocos-10)*(pchoco-0.1)))/chocos ;
+//     return pchoco.toFixed(2);
+//   } else if ( chocos > 20) {
+//     pchoco = 1.20;
+//   }
+//   return pchoco
+// }
+
+// console.log(chocolatines(10));
+// console.log(chocolatines(15));
+// console.log(chocolatines(25));
+
+
+
+
+
+  let n = Math.floor(Math.random()*(100-1) +1);
+  let t = 0;
+  let g = parseInt(prompt('essayez de deviner'));
+  
+  function guess(g) { 
+      t++;
+      if ( n == g){
+          console.log("Bravo vous avez gagnez !");
+      } else if ( n > g ) {
+          console.log("trop petit");
+          g = parseInt(prompt('essayez de deviner'));
+          guess(g);
+      } else if ( n < g ) {
+          console.log("trop grand");
+          g = parseInt(prompt('essayez de deviner'));
+          guess(g);
+      }
+    }
+      if (t == 10 ) {
+          console.log("c'est perdu !")
+   
+}
+
+guess(g);
 
 
 
@@ -1096,17 +1124,6 @@ contactApi();
 
 
 
-
-
-
-
-
-
-
-
-
-
->>>>>>> de64b886a7c8b2815548fc89f82181fb8a2092ad
 
 
 
