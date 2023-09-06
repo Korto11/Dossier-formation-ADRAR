@@ -34,9 +34,11 @@ d)	)Bonus :
                 
                 $name = $_POST["nom_article"];
                 $content = $_POST["contenu_article"];
-                $req = $db->prepare("INSERT INTO article(nom_article,contenu_article)VALUES(?,?)");
+                $categorie = $_POST["id_categorie"];
+                $req = $db->prepare("INSERT INTO article(nom_article,contenu_article,id_categorie)VALUES(?,?,?)");
                 $req->bindParam(1, $name);
                 $req->bindParam(2, $content);
+                $req->bindParam(3, $categorie);
                 $req->execute();
                 echo "Le nom de l'article : <em>$name</em> - et le contenu : <em>$content</em> - ont bien été enregistrées";
 
@@ -72,4 +74,28 @@ d)	)Bonus :
             die ('Erreur : '.$e->getMessage());
         }
         unset($db);
+    ?>
+    <?php
+    try {
+
+        if(isset($_POST["nom_categorie"])){
+
+                /*Connexion bdd */
+                $db = new PDO('mysql:host=docker-lamp-mysql;dbname=articles', 'root','p@ssw0rd',array(PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION));
+                $db ->setAttribute(PDO::ATTR_DEFAULT_FETCH_MODE, PDO::FETCH_ASSOC);
+                /* Ajout des input en BDD*/
+                
+                $categorie = $_POST["nom_categorie"];
+                $req = $db->prepare("INSERT INTO categorie(nom_categorie)VALUES(?)");
+                $req->bindParam(1, $categorie);
+                $req->execute();
+                echo "La catégorie : <em>$categorie</em> a bien été enregistrées";
+
+            }
+    }
+    catch (PDOException $e) {
+        die ('Erreur : '.$e->getMessage());
+    }
+        /*Fermeture de la connexion à la bdd */
+    unset($db);
     ?>
