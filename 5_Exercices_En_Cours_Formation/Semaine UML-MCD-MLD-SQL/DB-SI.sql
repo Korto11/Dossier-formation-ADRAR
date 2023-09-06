@@ -123,9 +123,22 @@ create table if not exists type_solution(
     );
     
 
-alter table utilisateur add constraint fk_id_poste foreign key (id_poste) references poste(id_poste);
-alter table installer add constraint fk_id_utilisateur_installer foreign key (id_utilisateur) references utilisateur(id_utilisateur);
-alter table installer add constraint fk_id_logiciel_installer foreign key (id_logiciel) references logiciel(id_logiciel);
+alter table utilisateur 
+add constraint fk_id_poste 
+foreign key (id_poste) 
+references poste(id_poste);
+
+alter table installer 
+add constraint fk_id_utilisateur_installer 
+foreign key (id_utilisateur) 
+references utilisateur(id_utilisateur);
+
+alter table installer 
+add constraint fk_id_logiciel_installer 
+foreign key (id_logiciel) 
+references logiciel(id_logiciel);
+
+
 alter table logiciel add constraint fk_id_editeur foreign key(id_editeur) references editeur(id_editeur);
 alter table assigner add constraint fk_id_utilisateur_assigner foreign key(id_utilisateur) references utilisateur(id_utilisateur);
 alter table assigner add constraint fk_id_materiel_assigner foreign key(id_materiel) references materiel(id_materiel);
@@ -148,15 +161,15 @@ alter table solution add constraint fk_id_utilisateur_solution foreign key (id_u
 insert into poste(nom_poste)
 values("employe"), ("admin"), ("technicien"), ("responsable");
 insert into utilisateur(nom_utilisateur, prenom_utilisateur, age_utilisateur, mail_utilisateur, password_utilisateur, id_poste)
-values ("jean", "jo", 12, "abc","1234azerty", 2), ("kevin", "serda" , 31,"ae", "azeazrzar", 3), ("laurent", "teyssier", 30,"1234azerty", "etzerarazr", 1), ("leyla", "pasaj", 36,"1234azerty", "pezrozerzer", 4);
+values ("jean", "jo", 12, "abc@gmail.com","1234azerty", 2), ("kevin", "serda" , 31,"ae@gmail.com", "azeazrzar", 3), ("laurent", "teyssier", 30,"1234azerty", "etzerarazr", 1), ("leyla", "pasaj", 36,"1234azerty", "pezrozerzer", 4);
 insert into fabricant (nom_fabricant)
 values("acer"), ("nvidia"), ("gigabyte");
 insert into type_materiel(nom_type_materiel)
 values("ecran"), ("pc portable"), ("desktop"), ("clavier"), ("souris");
 insert into materiel (nom_materiel, description_materiel, spare_materiel, quantite_materiel, id_fabricant, id_type_materiel)
-values ("aa", "aae", 0, 8, 1, 1), ("ee", "eea", 1, 41, 2, 2);
+values ("souris a34", "souris sans-fil", 0, 8, 1, 1), ("écran b52", "écran 24pcs", 1, 41, 2, 2);
 insert into editeur(nom_editeur)
-values("microsoft"),("oracle");
+values("microsoft"),("oracle");	
 insert into logiciel(nom_logiciel, description_logiciel, quantite_logiciel, id_editeur)
 values("photoshop", "photo", 12, 1), ("word", "texte", 5, 1), ("apache", "bdd", 4, 2);
 insert into statut(nom_statut)
@@ -176,6 +189,70 @@ values("jhfjkhg", "dfsfdjdkg", "2024-12-06", "00:00:20", false, 1 , 1),
  ("jhfjkhg", "dfsfdjdkg", "2024-12-06", "00:00:20", false, 2 , 2),
  ("jhfjkhg", "dfsfdjdkg", "2024-12-06", "00:00:20", false, 3 , 2);
 
-select nom_utilisateur,prenom_utilisateur,id_poste
+select nom_utilisateur,prenom_utilisateur,nom_poste
 from utilisateur
+inner join poste
+on utilisateur.id_poste = poste.id_poste;
 
+select nom_utilisateur,prenom_utilisateur,nom_poste
+from utilisateur
+inner join poste
+on utilisateur.id_poste = poste.id_poste
+where nom_poste = "technicien";
+
+select nom_materiel, description_materiel, quantite_materiel, nom_fabricant, nom_type_materiel
+from materiel
+inner join fabricant
+on materiel.id_fabricant = fabricant.id_fabricant
+inner join type_materiel
+on materiel.id_type_materiel = type_materiel.id_type_materiel;
+
+select nom_logiciel, description_logiciel, nom_editeur
+from logiciel
+inner join editeur 
+on logiciel.id_editeur = editeur.id_editeur;
+
+select nom_ticket, description_ticket, date_ouverture_ticket, nom_statut, nom_utilisateur, prenom_utilisateur, nom_type_ticket
+from ticket
+inner join statut
+on ticket.id_statut = statut.id_statut
+inner join utilisateur
+on ticket.id_utilisateur = utilisateur.id_utilisateur
+inner join type_ticket
+on ticket.id_type_ticket = type_ticket.id_type_ticket;
+
+select nom_intervention, description_intervention, date_intervention, duree_intervention, nom_utilisateur, prenom_utilisateur, nom_poste
+from intervention
+inner join utilisateur
+on intervention.id_utilisateur = utilisateur.id_utilisateur
+inner join poste
+on utilisateur.id_poste = poste.id_poste
+where nom_poste = "technicien";
+
+select nom_intervention, description_intervention, date_intervention, duree_intervention, nom_utilisateur, prenom_utilisateur
+from intervention
+inner join utilisateur
+on intervention.id_utilisateur = utilisateur.id_utilisateur
+where date_intervention = "2024-12-06";
+
+select distinct nom_utilisateur, prenom_utilisateur, count(intervention.id_utilisateur) over (partition by intervention.id_utilisateur) as nombre_demandes,
+count(ticket.id_utilisateur) over (partition by ticket.id_utilisateur) as nombre_tickets
+from utilisateur
+inner join intervention
+on utilisateur.id_utilisateur = intervention.id_utilisateur
+inner join ticket
+on utilisateur.id_utilisateur = ticket.id_utilisateur
+order by nom_utilisateur asc, prenom_utilisateur asc;
+
+select nom_utilisateur, prenom_utilisateur, count(intervention.id_utilisateur) over (partition by intervention.id_utilisateur ) as nombre_demandes, nom_poste
+from utilisateur
+inner join intervention
+on utilisateur.id_utilisateur = intervention.id_utilisateur
+inner join poste
+on utilisateur.id_poste = poste.id_poste
+order by nombre_demandes desc limit 1;
+
+select nom_ticket, description_ticket, date_ouverture_ticket, count(intervention.id_ticket) over (partition by id_intervention) as nombre_ticket
+from ticket
+inner join intervention 
+on ticket.id_ticket = intervention.id_ticket;
