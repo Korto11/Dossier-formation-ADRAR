@@ -18,7 +18,7 @@ body {
 }
 
 
-main {
+#lobby {
     display: flex;
     flex-direction: column;
     margin: auto;
@@ -55,3 +55,22 @@ button:hover {
 
 }
 
+#main {
+    margin: auto;
+    height: 667px;
+    width : 375px;
+    background-color: #fff2d0;
+}
+
+
+header {
+    height: 8%;
+    width: 100%;
+    background-color: #56c054f5;
+}
+
+.map {
+    height: 50%;
+    width: 100%;
+    background-color: white;
+}
