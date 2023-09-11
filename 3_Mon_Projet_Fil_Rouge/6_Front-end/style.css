@@ -55,16 +55,3 @@ button:hover {
 
 }
 
-a{
-    border: none;
-}
-
-a:visited{
-    color: white;
-}
-
-a:hover {
-    background-color: white;
-    color: #56c054f5;
-    transition: all 1s;  
-}
