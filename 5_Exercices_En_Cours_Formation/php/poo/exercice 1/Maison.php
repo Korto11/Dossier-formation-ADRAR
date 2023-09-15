@@ -15,5 +15,9 @@ class Maison {
             $surface = $this->longueur*$this->largeur*(1+$this->nbrEtage);
             echo "<p>la surface de ".$this->nom." est égale à ".$surface." m²</p>";
         }
+        public function boost(){
+            $this->vitesse = $this->vitesse +50;
+            return $this->vitesse;
+        }
     }
 ?>
