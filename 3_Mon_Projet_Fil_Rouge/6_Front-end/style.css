@@ -60,8 +60,12 @@ button:hover {
     height: 667px;
     width : 375px;
     background-color: #fff2d0;
+    
 }
 
+p{
+    color: black;
+}
 
 header {
     height: 8%;
