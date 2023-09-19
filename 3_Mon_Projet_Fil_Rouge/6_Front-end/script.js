@@ -19,12 +19,16 @@ window.onload =  () => {
 
     champVille.addEventListener("change", function(){
         // On envoie la requête ajax vers Nominatim
-        ajaxGet(`https://nominatim.openstreetmap.org/search?q=${this.value}&format=json&adressdetails=1&limit=1&polygon_svg=1`).then(response => {
+        ajaxGet(`https://nominatim.openstreetmap.org/search?q=${this.value}&format=json&adressdetails=1&bounded=1&extratags=1&limit=2&polygon_svg=1`).then(response => {
             // On convertit la réponse en objet Javascript
             let data = JSON.parse(response)
+            // console.log(data);
 
             // On stocke les coordonnées dans ville
             ville = [data[0].lat, data[0].lon]
+            marqueur = L.marker(ville,{draggable: true})
+            test = marqueur.addTo(macarte)
+            console.log(test);
 
             // On centre la carte sur la ville
             macarte.panTo(ville)
@@ -65,7 +69,7 @@ function ajaxGet(url){
 
         xmlhttp.onreadystatechange = function() {
             if(xmlhttp.readyState == 4){
-                if(xmlhttp.status ==200){
+                if(xmlhttp.status == 200){
                     // On "résoud" la promesse
                     resolve(xmlhttp.response)
                 } else {
