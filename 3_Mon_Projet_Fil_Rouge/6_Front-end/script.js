@@ -1,10 +1,12 @@
 // variables globales
 let ville = distance =""
+let lattitude = 43.600000
+let longitude = 1.433333
 
 // vérif du chargment de la page
 
 window.onload =  () => {
-    let macarte = L.map("carte").setView([43.600000, 1.433333],13)
+    let macarte = L.map("carte").setView([lattitude, longitude],13)
     L.tileLayer('https://{s}.tile.openstreetmap.fr/osmfr/{z}/{x}/{y}.png',{
         attribution: 'données OpenStreeMap France',
         minZoom :1,
@@ -19,21 +21,28 @@ window.onload =  () => {
 
     champVille.addEventListener("change", function(){
         // On envoie la requête ajax vers Nominatim
-        ajaxGet(`https://nominatim.openstreetmap.org/search?q=${this.value}&format=json&adressdetails=1&bounded=1&extratags=1&limit=2&polygon_svg=1`).then(response => {
+        ajaxGet(`https://nominatim.openstreetmap.org/search?q=${this.value}&format=json&adressdetails=1&bounded=1&extratags=1&limit=1&polygon_svg=1`).then(response => {
             // On convertit la réponse en objet Javascript
             let data = JSON.parse(response)
-            // console.log(data);
+            console.log(data);
 
             // On stocke les coordonnées dans ville
             ville = [data[0].lat, data[0].lon]
             marqueur = L.marker(ville,{draggable: true})
             test = marqueur.addTo(macarte)
-            console.log(test);
+            // console.log(test);
 
             // On centre la carte sur la ville
             macarte.panTo(ville)
         })
     })
+
+    let cercle = L.circle([43.600000,1.433333], {
+        color: 'red',
+        fillColor :'white',
+        fillOpacity : 0.1,
+        radius: 2500
+     }).addTo(macarte);
 
     champDistance.addEventListener("change", function(){
         distance = this.value
@@ -85,3 +94,7 @@ function ajaxGet(url){
         xmlhttp.send()
     })
 }
+
+// Dessiner un cercle de 50 km de diamètre 
+
+ 
