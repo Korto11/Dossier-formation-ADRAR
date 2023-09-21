@@ -98,3 +98,4 @@ function ajaxGet(url){
 // Dessiner un cercle de 50 km de diamètre 
 
  
+// Solution de base de donnée locale prétélachargé au lieu de faire des requêtes a répétition.
