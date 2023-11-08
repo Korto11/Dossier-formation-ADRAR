@@ -99,3 +99,4 @@ function ajaxGet(url){
 
  
 // test git
+// Solution de base de donnée locale prétélachargé au lieu de faire des requêtes a répétition.
